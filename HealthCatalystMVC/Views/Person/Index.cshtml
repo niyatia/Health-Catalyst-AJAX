@@ -1,0 +1,56 @@
+﻿@model IEnumerable<HealthCatalystMVC.Models.Person>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Person Search</h2>
+<input id="txtBoxPersonSearch" type="text" />
+<input id="btnGetPersons" type="button" value="Get Persons" />
+
+<br />
+<br />
+<br />
+<div>
+    <table id="personDataTable" border="1">
+        <tr style="font:700; font-family:'Goudy Old Style'; font-size:large">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Age</th>
+            <th>Photo</th>
+        </tr>
+
+    </table>
+   
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnGetPersons').click(function () {
+            var searchKey = $("#txtBoxPersonSearch").val();
+            $.getJSON("/Person/GetJsonData", { search: searchKey }, function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    drawRow(data[i]);
+                }
+            });
+        });
+    });
+
+    function drawRow(rowData) {
+        debugger;
+        var row = $("<tr/>")
+        var img = "<img src=\"" + "Images/" + rowData.Photo + "\" />";
+        alert(img);
+        $("#personDataTable").append(row);
+        row.append($("<td>" + rowData.FirstName + "</td>"));
+        row.append($("<td>" + rowData.LastName + "</td>"));
+        row.append($("<td>" + rowData.Address + "</td>"));
+        row.append($("<td>" + rowData.Age + "</td>"));
+        row.append($("<td>" + img + "</td>"));
+    }
+
+</script>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
