@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,17 @@ namespace HealthCatalystMVC.Models
     {
         [DisplayName("PersonID")]
         public int PersonID { get; set; }
+
         [DisplayName("FirstName")]
+        [Required(ErrorMessage = "First Name is required")]
+        [StringLength(50)]
         public string FirstName { get; set; }
+
         [DisplayName("LastName")]
+        [Required(ErrorMessage = "Last Name is required")]
+        [StringLength(50)]
         public string LastName { get; set; }
+
         [DisplayName("Address")]
         public string Address { get; set; }
         [DisplayName("Age")]
@@ -24,7 +32,7 @@ namespace HealthCatalystMVC.Models
         [DisplayName("Photo")]
         public string Photo { get; set; }
         [DisplayName("Interests")]
-        public virtual ICollection<PersonInterest> Interests { get; set; }
+        public string Interests { get; set; }
 
     }
 }

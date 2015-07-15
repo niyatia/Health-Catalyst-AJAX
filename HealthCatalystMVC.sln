@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCatalystMVC", "HealthCatalystMVC\HealthCatalystMVC.csproj", "{B6E2C88A-303C-48FF-96CB-11DC6FAF1A1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCatalystTest", "HealthCatalystTest\HealthCatalystTest.csproj", "{92A7BD81-6F4B-48E7-87B2-970A85CCE872}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B6E2C88A-303C-48FF-96CB-11DC6FAF1A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6E2C88A-303C-48FF-96CB-11DC6FAF1A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6E2C88A-303C-48FF-96CB-11DC6FAF1A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92A7BD81-6F4B-48E7-87B2-970A85CCE872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A7BD81-6F4B-48E7-87B2-970A85CCE872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A7BD81-6F4B-48E7-87B2-970A85CCE872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A7BD81-6F4B-48E7-87B2-970A85CCE872}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

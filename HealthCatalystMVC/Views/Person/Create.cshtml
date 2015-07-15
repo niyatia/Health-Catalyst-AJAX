@@ -1,9 +1,12 @@
 ﻿@model HealthCatalystMVC.Models.Person
+@Html.HiddenFor(x => x.PersonID)
+
 
 @{
     ViewBag.Title = "Create";
 }
 
+<script src="~/Scripts/CustomJS.js"></script>
 <h2>Create</h2>
 
 
@@ -11,7 +14,7 @@
                  new{ enctype="multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-
+  
     <div class="form-horizontal">
         <h4>Person</h4>
         <hr />

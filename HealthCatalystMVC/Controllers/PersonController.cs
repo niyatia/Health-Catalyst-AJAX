@@ -17,15 +17,16 @@ namespace HealthCatalystMVC.Controllers
 
         // GET: Person
         public ActionResult Index()
-        {            
+        {
             return View(db.Person.ToList());
         }
 
         public JsonResult GetJsonData(string search)
         {
-            var persons = db.Person.ToList().Where(p => p.FirstName == search || p.LastName == search).ToList();
-
-            return Json(persons, JsonRequestBehavior.AllowGet);
+            var persons = db.Person.Where(p => p.FirstName == search || p.LastName == search).ToList();
+           
+            JsonResult json = Json(persons, JsonRequestBehavior.AllowGet);
+            return json;
         }
 
         // GET: Person/Details/5
@@ -45,7 +46,7 @@ namespace HealthCatalystMVC.Controllers
 
         // GET: Person/Create
         public ActionResult Create()
-        {
+        {            
             return View();
         }
 
@@ -54,7 +55,7 @@ namespace HealthCatalystMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PersonID,FirstName,LastName,Address,Age,Photo")] Person person)
+        public ActionResult Create([Bind(Include = "PersonID,FirstName,LastName,Address,Age,Photo,Interests")] Person person)
         {
             var path = "";
             var fileName = "";
@@ -71,8 +72,6 @@ namespace HealthCatalystMVC.Controllers
                         file.SaveAs(path);
                     }
                 }
-
-                person.Photo = fileName.ToString();
 
                 db.Person.Add(person);
                 db.SaveChanges();

@@ -14,16 +14,18 @@ namespace HealthCatalystMVC
             : base("PersonContext")
         {
         }
-        public DbSet<Person> Person { get; set; }
-        public DbSet<PersonInterest> Interests { get; set; }
 
+        static PersonContext()
+        {
+            System.Data.Entity.Database.SetInitializer(new DropCreateDatabaseIfModelChanges<PersonContext>());
+        }
+
+        public DbSet<Person> Person { get; set; }
+       
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Person>().ToTable("Person");
             modelBuilder.Entity<Person>().HasKey(b => b.PersonID);
-
-            modelBuilder.Entity<PersonInterest>().ToTable("Interest");
-            modelBuilder.Entity<PersonInterest>().HasKey(b => b.InterestId);
 
             base.OnModelCreating(modelBuilder);
         }

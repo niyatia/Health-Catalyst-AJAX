@@ -19,6 +19,7 @@
             <th>Last Name</th>
             <th>Address</th>
             <th>Age</th>
+            <th>Interests</th>
             <th>Photo</th>
         </tr>
 
@@ -26,10 +27,12 @@
    
 </div>
 <script type="text/javascript">
-    $(document).ready(function () {
+    $(document).ready(function () {        
         $('#btnGetPersons').click(function () {
             var searchKey = $("#txtBoxPersonSearch").val();
-            $.getJSON("/Person/GetJsonData", { search: searchKey }, function (data) {
+            $.getJSON("/Person/GetJsonData",
+                { search: searchKey },
+                function (data) {
                 for (var i = 0; i < data.length; i++) {
                     drawRow(data[i]);
                 }
@@ -40,13 +43,14 @@
     function drawRow(rowData) {
         debugger;
         var row = $("<tr/>")
-        var img = "<img src=\"" + "Images/" + rowData.Photo + "\" />";
-        alert(img);
+        var img = "<img src=" + "~/Images/" + rowData.Photo + " />";
+        
         $("#personDataTable").append(row);
         row.append($("<td>" + rowData.FirstName + "</td>"));
         row.append($("<td>" + rowData.LastName + "</td>"));
         row.append($("<td>" + rowData.Address + "</td>"));
         row.append($("<td>" + rowData.Age + "</td>"));
+        row.append($("<td>" + rowData.Interests + "</td>"));
         row.append($("<td>" + img + "</td>"));
     }
 
