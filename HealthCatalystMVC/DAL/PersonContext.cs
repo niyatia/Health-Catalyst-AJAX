@@ -4,9 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HealthCatalystMVC.Models;
+using HealthCatalystAJAX.Models;
 
-namespace HealthCatalystMVC
+namespace HealthCatalystAJAX
 {
     public class PersonContext : DbContext
     {

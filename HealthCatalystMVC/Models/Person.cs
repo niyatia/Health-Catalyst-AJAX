@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace HealthCatalystMVC.Models
+namespace HealthCatalystAJAX.Models
 {
     public class Person
     {

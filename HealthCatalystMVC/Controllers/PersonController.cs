@@ -6,10 +6,10 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using HealthCatalystMVC.Models;
+using HealthCatalystAJAX.Models;
 using System.IO;
 
-namespace HealthCatalystMVC.Controllers
+namespace HealthCatalystAJAX.Controllers
 {
     public class PersonController : Controller
     {

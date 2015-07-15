@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace HealthCatalystMVC
+namespace HealthCatalystAJAX
 {
     public class RouteConfig
     {
@@ -16,7 +16,7 @@ namespace HealthCatalystMVC
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Person", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
